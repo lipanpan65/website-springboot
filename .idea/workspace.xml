@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18067ba0-c0c7-4e68-8d04-1a1ec144af79" name="Changes" comment="" />
+    <list default="true" id="18067ba0-c0c7-4e68-8d04-1a1ec144af79" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/common/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/config/MyBatisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/controller/ExampleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/dto/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/enums/ResultCodeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/repository/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/utils/DateUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/utils/StringUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/test/java/com/lipanpan/website/common/ResultTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/test/java/com/lipanpan/website/controller/HomeControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/test/java/com/lipanpan/website/repository/UserMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/test/java/com/lipanpan/website/service/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,13 +43,22 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -44,37 +74,115 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.WebsiteApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.WebsiteApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/lipanpan/github/website-springboot",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.WebsiteApplication.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ResultTest.testCodeMethod.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ResultTest.testEnum.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ResultTest.testFailureWithCodeAndMessage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ResultTest.testMessageMethod.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ResultTest.testSuccessNoArgs.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.website [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.website [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.website [test].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.WebsiteApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/lipanpan/github/website-springboot&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Spring Boot.WebsiteApplication">
-    <configuration name="WebsiteApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.lipanpan.website.WebsiteApplication" />
+}</component>
+  <component name="RunManager" selected="JUnit.ResultTest.testEnum">
+    <configuration name="ResultTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="website" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.lipanpan.website.*" />
+          <option name="PATTERN" value="com.lipanpan.website.common.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.lipanpan.website.common" />
+      <option name="MAIN_CLASS_NAME" value="com.lipanpan.website.common.ResultTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResultTest.testEnum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="website" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lipanpan.website.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lipanpan.website.common" />
+      <option name="MAIN_CLASS_NAME" value="com.lipanpan.website.common.ResultTest" />
+      <option name="METHOD_NAME" value="testEnum" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResultTest.testFailureWithCodeAndMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="website" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lipanpan.website.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lipanpan.website.common" />
+      <option name="MAIN_CLASS_NAME" value="com.lipanpan.website.common.ResultTest" />
+      <option name="METHOD_NAME" value="testFailureWithCodeAndMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResultTest.testMessageMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="website" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lipanpan.website.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lipanpan.website.common" />
+      <option name="MAIN_CLASS_NAME" value="com.lipanpan.website.common.ResultTest" />
+      <option name="METHOD_NAME" value="testMessageMethod" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResultTest.testSuccessNoArgs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="website" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lipanpan.website.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lipanpan.website.common" />
+      <option name="MAIN_CLASS_NAME" value="com.lipanpan.website.common.ResultTest" />
+      <option name="METHOD_NAME" value="testSuccessNoArgs" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -89,7 +197,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WebsiteApplication" />
+        <item itemvalue="JUnit.ResultTest.testEnum" />
+        <item itemvalue="JUnit.ResultTest" />
+        <item itemvalue="JUnit.ResultTest.testSuccessNoArgs" />
+        <item itemvalue="JUnit.ResultTest.testFailureWithCodeAndMessage" />
+        <item itemvalue="JUnit.ResultTest.testMessageMethod" />
       </list>
     </recent_temporary>
   </component>
@@ -102,6 +214,9 @@
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StructureViewState">
+    <option name="selectedTab" value="Logical" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="18067ba0-c0c7-4e68-8d04-1a1ec144af79" name="Changes" comment="" />
@@ -110,11 +225,56 @@
       <option name="presentableId" value="Default" />
       <updated>1742174601393</updated>
       <workItem from="1742174602443" duration="1752000" />
-      <workItem from="1742177857920" duration="304000" />
+      <workItem from="1742177857920" duration="8384000" />
+      <workItem from="1742210982959" duration="480000" />
+      <workItem from="1742211474076" duration="933000" />
+      <workItem from="1742212413355" duration="364000" />
+      <workItem from="1742212802876" duration="66000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/common/Result.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/common/Result.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/common/Result.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/common/Result.java</url>
+          <line>38</line>
+          <properties class="com.lipanpan.website.common.Result" method="success">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
