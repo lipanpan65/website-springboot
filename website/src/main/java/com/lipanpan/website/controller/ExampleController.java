@@ -17,6 +17,10 @@ public class ExampleController {
             return Result.failure(ResultCodeEnum.PARAM_IS_INVALID);
         }
         String message = "Hello, " + name + "!";
-        return Result.success().message(message);
+//         return Result.success();
+//         return Result.success(message);
+//         return Result.success(message);
+        return Result.success(ResultCodeEnum.SUCCESS);
+//        return Result.chainSuccess().message(message).build();
     }
 }

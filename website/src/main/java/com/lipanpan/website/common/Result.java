@@ -1,213 +1,158 @@
 package com.lipanpan.website.common;
 
 import com.lipanpan.website.enums.ResultCodeEnum;
-import lombok.Data;
-import lombok.Getter;
+import lombok.*;
 
 import java.io.Serializable;
 
-@Data
+@Getter
+@ToString
+@NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@Builder
 public class Result<T> implements Serializable {
 
-    private Boolean failure;
-    private Boolean success;
-    private String code;
-    private String message;
-    private T data;
-    private long timestamp;
+    private final boolean success; // 是否成功
+    private final String code;     // 状态码
+    private final String message;  // 消息
+    private final T data;          // 数据
+    private final long timestamp;  // 时间戳
 
-    public Result() {
-        this.timestamp = System.currentTimeMillis();
+    // 判断是否失败
+    public boolean isFailure() {
+        return !success;
     }
 
-    public Result(String code, String message) {
-        this.code = code;
-        this.message = message;
-        this.timestamp = System.currentTimeMillis();
-    }
-
-    public Result(String code, String message, T data) {
-        this(code, message);
-        this.data = data;
-    }
-
-    private void setTimestamp() {
-        this.timestamp = System.currentTimeMillis();
-    }
-
+    // 静态工厂方法：成功（带默认数据）
     public static <T> Result<T> success() {
-        System.out.println("success");
-        Result<T> result = new Result<>();
-
-        result.setSuccess(true);
-        result.setFailure(false);
-        result.setCode(ResultCodeEnum.SUCCESS.getCode());
-        result.setMessage(ResultCodeEnum.SUCCESS.getMessage());
-        result.setTimestamp();
-        return result;
+        return success(ResultCodeEnum.SUCCESS, null);
     }
 
-    public static <T> Result<T> success(ResultCodeEnum resultCodeEnum) {
-        Result<T> result = new Result<>();
-        result.setSuccess(true);
-        result.setFailure(false);
-        result.setCode(resultCodeEnum.getCode());
-        result.setMessage(resultCodeEnum.getMessage());
-        result.setTimestamp();
-        return result;
-    }
-
-    public static <T> Result<T> success(String message) {
-        Result<T> result = new Result<>();
-        result.setSuccess(true);
-        result.setFailure(false);
-        result.setCode(ResultCodeEnum.SUCCESS.getCode());
-        result.setMessage(message);
-        result.setTimestamp();
-        return result;
-    }
-
+    // 静态工厂方法：成功（带数据）
     public static <T> Result<T> success(T data) {
-        Result<T> result = new Result<>();
-        result.setSuccess(true);
-        result.setFailure(false);
-        String code = ResultCodeEnum.SUCCESS.getCode();
-        String message = ResultCodeEnum.SUCCESS.getMessage();
-        System.out.println("Code: " + code);
-        System.out.println("Message: " + message);
-        result.setCode(ResultCodeEnum.SUCCESS.getCode());
-        result.setMessage(ResultCodeEnum.SUCCESS.getMessage());
-        result.setData(data);
-        result.setTimestamp();
-        return result;
+        return success(ResultCodeEnum.SUCCESS, null, data);
     }
 
+    // 静态工厂方法：成功（自定义消息 + 数据）
     public static <T> Result<T> success(String message, T data) {
-        Result<T> result = new Result<>();
-        result.setSuccess(true);
-        result.setFailure(false);
-        result.setCode(ResultCodeEnum.SUCCESS.getCode());
-        result.setMessage(message);
-        result.setData(data);
-        result.setTimestamp();
-        return result;
+        return success(ResultCodeEnum.SUCCESS, message, data);
     }
 
-    public static <T> Result<T> success(String code, String message) {
-        Result<T> result = new Result<>();
-
-        result.setSuccess(true);
-        result.setFailure(false);
-        result.setCode(code);
-        result.setMessage(message);
-        result.setTimestamp();
-        return result;
+    // 静态工厂方法：成功（传入枚举 + 数据）
+    public static <T> Result<T> success(ResultCodeEnum resultCode, T data) {
+        return success(resultCode, null, data);
     }
 
-    public static <T> Result<T> success(String code, String message, T data) {
-        Result<T> result = new Result<>();
-        result.setSuccess(true);
-        result.setFailure(false);
-        result.setCode(code);
-        result.setMessage(message);
-        result.setData(data);
-        result.setTimestamp();
-        return result;
+    // 静态工厂方法：成功（传入枚举 + 自定义消息 + 数据）
+    public static <T> Result<T> success(ResultCodeEnum resultCode, String message, T data) {
+        return Result.<T>builder()
+                .success(true)
+                .code(resultCode.getCode())
+                .message(message != null ? message : resultCode.getMessage())
+                .data(data)
+                .timestamp(System.currentTimeMillis())
+                .build();
     }
 
+    // 静态工厂方法：失败（默认消息）
     public static <T> Result<T> failure() {
-        return failure(ResultCodeEnum.FAILURE);
+        return failure(ResultCodeEnum.FAILURE, null, null);
     }
 
-    public static <T> Result<T> failure(ResultCodeEnum resultCodeEnum) {
-        Result<T> result = new Result<>();
-        result.setSuccess(false);
-        result.setFailure(true);
-        result.setCode(resultCodeEnum.getCode());
-        result.setMessage(resultCodeEnum.getMessage());
-        result.setTimestamp();
-        return result;
-    }
-
+    // 静态工厂方法：失败（自定义消息）
     public static <T> Result<T> failure(String message) {
-        Result<T> result = new Result<>();
-        result.setSuccess(false);
-        result.setFailure(true);
-        result.setCode(ResultCodeEnum.FAILURE.getCode());
-        result.setMessage(message);
-        result.setTimestamp();
-        return result;
+        return failure(ResultCodeEnum.FAILURE, message, null);
     }
 
-    public static <T> Result<T> failure(T data) {
-        Result<T> result = new Result<>();
-        result.setSuccess(false);
-        result.setFailure(true);
-        result.setCode(ResultCodeEnum.FAILURE.getCode());
-        result.setMessage(ResultCodeEnum.FAILURE.getMessage());
-        result.setData(data);
-        result.setTimestamp();
-        return result;
-    }
-
-    public static <T> Result<T> failure(String message, T data) {
-        Result<T> result = new Result<>();
-        result.setSuccess(false);
-        result.setFailure(true);
-        result.setCode(ResultCodeEnum.FAILURE.getCode());
-        result.setMessage(message);
-        result.setData(data);
-        result.setTimestamp();
-        return result;
-    }
-
+    // 静态工厂方法：失败（自定义状态码 + 消息）
     public static <T> Result<T> failure(String code, String message) {
-        Result<T> result = new Result<>();
-        result.setSuccess(false);
-        result.setFailure(true);
-        result.setCode(code);
-        result.setMessage(message);
-        result.setTimestamp();
-        return result;
+        return Result.<T>builder()
+                .success(false)
+                .code(code)
+                .message(message)
+                .timestamp(System.currentTimeMillis())
+                .build();
     }
 
-    public static <T> Result<T> failure(String code, String message, T data) {
-        Result<T> result = new Result<>();
-        result.setSuccess(false);
-        result.setFailure(true);
-        result.setCode(code);
-        result.setMessage(message);
-        result.setData(data);
-        result.setTimestamp();
-        return result;
+    // 静态工厂方法：失败（仅传入枚举）
+    public static <T> Result<T> failure(ResultCodeEnum resultCode) {
+        return failure(resultCode, null, null);
     }
 
-    public Result<T> message(String message) {
-        this.message = message;
-        return this;
+    // 静态工厂方法：失败（传入枚举 + 自定义消息）
+    public static <T> Result<T> failure(ResultCodeEnum resultCode, String message) {
+        return failure(resultCode, message, null);
     }
 
-    public Result<T> code(String code) {
-        this.code = code;
-        return this;
+    // 静态工厂方法：失败（传入枚举 + 数据）
+    public static <T> Result<T> failure(ResultCodeEnum resultCode, T data) {
+        return failure(resultCode, null, data);
     }
 
-    public Result<T> data(T data) {
-        this.data = data;
-        return this;
+    // 静态工厂方法：失败（传入枚举 + 自定义消息 + 数据）
+    public static <T> Result<T> failure(ResultCodeEnum resultCode, String message, T data) {
+        return Result.<T>builder()
+                .success(false)
+                .code(resultCode.getCode())
+                .message(message != null ? message : resultCode.getMessage())
+                .data(data)
+                .timestamp(System.currentTimeMillis())
+                .build();
     }
 
-//    public long getTimestamp() {
-//        return timestamp;
-//    }
+    // 静态工厂方法：链式调用入口（成功）
+    public static <T> ResultBuilder<T> chainSuccess() {
+        return Result.<T>builder()
+                .success(true)
+                .code(ResultCodeEnum.SUCCESS.getCode())
+                .message(ResultCodeEnum.SUCCESS.getMessage())
+                .timestamp(System.currentTimeMillis());
+    }
 
-    // 辅助方法，帮助泛型推断
-    public static <T> Result<T> ofType(Class<T> type) {
-        return success();
+    // 静态工厂方法：链式调用入口（失败）
+    public static <T> ResultBuilder<T> chainFailure() {
+        return Result.<T>builder()
+                .success(false)
+                .code(ResultCodeEnum.FAILURE.getCode())
+                .message(ResultCodeEnum.FAILURE.getMessage())
+                .timestamp(System.currentTimeMillis());
+    }
+
+    // 静态内部类：支持链式调用的 ResultBuilder
+    public static class ResultBuilder<T> {
+        private boolean success;
+        private String code;
+        private String message;
+        private T data;
+        private long timestamp;
+
+        // 链式调用：设置消息
+        public ResultBuilder<T> message(String message) {
+            this.message = message;
+            return this;
+        }
+
+        // 链式调用：设置数据
+        public ResultBuilder<T> data(T data) {
+            this.data = data;
+            return this;
+        }
+
+        // 链式调用：设置状态码
+        public ResultBuilder<T> code(String code) {
+            this.code = code;
+            return this;
+        }
+
+        // 链式调用：设置时间戳
+        public ResultBuilder<T> timestamp(long timestamp) {
+            this.timestamp = timestamp;
+            return this;
+        }
+
+        // 构建 Result 对象
+        public Result<T> build() {
+            return new Result<>(success, code, message, data, timestamp);
+        }
     }
 }
-
-
-
-
-

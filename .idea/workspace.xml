@@ -5,26 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18067ba0-c0c7-4e68-8d04-1a1ec144af79" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/common/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/config/MyBatisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/controller/ExampleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/dto/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/enums/ResultCodeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/repository/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/utils/DateUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/utils/StringUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/test/java/com/lipanpan/website/common/ResultTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/test/java/com/lipanpan/website/controller/HomeControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/test/java/com/lipanpan/website/repository/UserMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/test/java/com/lipanpan/website/service/UserServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/projectlombok_lombok.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/src/test/java/com/lipanpan/website/entity/LombokTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/website/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/common/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/common/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/controller/ExampleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/controller/ExampleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/enums/ResultCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/enums/ResultCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/src/test/java/com/lipanpan/website/common/ResultTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/website/src/test/java/com/lipanpan/website/common/ResultTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +58,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -74,40 +69,61 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.WebsiteApplication.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ResultTest.testCodeMethod.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ResultTest.testEnum.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ResultTest.testFailureWithCodeAndMessage.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ResultTest.testMessageMethod.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ResultTest.testSuccessNoArgs.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.website [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.website [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.website [test].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.WebsiteApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/lipanpan/github/website-springboot&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.LombokTest.executor": "Run",
+    "Application.WebsiteApplication.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.ResultTest.executor": "Run",
+    "JUnit.ResultTest.testCodeMethod.executor": "Run",
+    "JUnit.ResultTest.testEnum.executor": "Run",
+    "JUnit.ResultTest.testFailureWithCodeAndMessage.executor": "Run",
+    "JUnit.ResultTest.testMessageMethod.executor": "Run",
+    "JUnit.ResultTest.testSuccess.executor": "Debug",
+    "JUnit.ResultTest.testSuccessNoArgs.executor": "Run",
+    "Maven.website [clean].executor": "Run",
+    "Maven.website [install].executor": "Run",
+    "Maven.website [test].executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.WebsiteApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/lipanpan/github/website-springboot",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.ResultTest.testEnum">
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.WebsiteApplication">
+    <configuration name="LombokTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lipanpan.website.entity.LombokTest" />
+      <module name="website" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lipanpan.website.entity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ResultTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="website" />
       <extension name="coverage">
@@ -139,7 +155,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ResultTest.testFailureWithCodeAndMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ResultTest.testSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="website" />
       <extension name="coverage">
         <pattern>
@@ -149,23 +165,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.lipanpan.website.common" />
       <option name="MAIN_CLASS_NAME" value="com.lipanpan.website.common.ResultTest" />
-      <option name="METHOD_NAME" value="testFailureWithCodeAndMessage" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ResultTest.testMessageMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="website" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.lipanpan.website.common.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.lipanpan.website.common" />
-      <option name="MAIN_CLASS_NAME" value="com.lipanpan.website.common.ResultTest" />
-      <option name="METHOD_NAME" value="testMessageMethod" />
+      <option name="METHOD_NAME" value="testSuccess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -197,11 +197,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ResultTest.testEnum" />
-        <item itemvalue="JUnit.ResultTest" />
+        <item itemvalue="JUnit.ResultTest.testSuccess" />
         <item itemvalue="JUnit.ResultTest.testSuccessNoArgs" />
-        <item itemvalue="JUnit.ResultTest.testFailureWithCodeAndMessage" />
-        <item itemvalue="JUnit.ResultTest.testMessageMethod" />
+        <item itemvalue="JUnit.ResultTest.testEnum" />
+        <item itemvalue="Application.LombokTest" />
+        <item itemvalue="JUnit.ResultTest" />
       </list>
     </recent_temporary>
   </component>
@@ -230,6 +230,15 @@
       <workItem from="1742211474076" duration="933000" />
       <workItem from="1742212413355" duration="364000" />
       <workItem from="1742212802876" duration="66000" />
+      <workItem from="1742212870970" duration="912000" />
+      <workItem from="1742307971439" duration="911000" />
+      <workItem from="1742308887561" duration="16000" />
+      <workItem from="1742308915970" duration="576000" />
+      <workItem from="1742309498014" duration="433000" />
+      <workItem from="1742309936485" duration="2791000" />
+      <workItem from="1742313029055" duration="128000" />
+      <workItem from="1742313196186" duration="766000" />
+      <workItem from="1742314851872" duration="8650000" />
     </task>
     <servers />
   </component>
@@ -246,35 +255,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/common/Result.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/common/Result.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/common/Result.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/website/src/main/java/com/lipanpan/website/common/Result.java</url>
-          <line>38</line>
-          <properties class="com.lipanpan.website.common.Result" method="success">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

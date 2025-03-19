@@ -9,154 +9,107 @@ class ResultTest {
 
     @Test
     void testEnum() {
-//        System.out.println(ResultCodeEnum.SUCCESS.getCode());
-        System.out.println("sss");
+        // 测试枚举值是否正确
+        assertEquals("0000", ResultCodeEnum.SUCCESS.getCode());
+        assertEquals("SUCCESS", ResultCodeEnum.SUCCESS.getMessage());
+        assertEquals("9999", ResultCodeEnum.FAILURE.getCode());
+        assertEquals("FAILURE", ResultCodeEnum.FAILURE.getMessage());
     }
+
+
+    @Test
+    void testSuccess() {
+//        Result<String> result = Result.success("data");
+        Result<String> result = Result.success();
+        System.out.println(result);
+    }
+
 
     @Test
     void testSuccessNoArgs() {
+        // 测试无参的成功结果
         Result<String> result = Result.success();
-        assertTrue(result.getSuccess());
-        assertFalse(result.getFailure());
         assertEquals(ResultCodeEnum.SUCCESS.getCode(), result.getCode());
         assertEquals(ResultCodeEnum.SUCCESS.getMessage(), result.getMessage());
-        assertNull(result.getData());
+        assertNull(result.getData()); // 断言 data 为 null
         assertTrue(result.getTimestamp() > 0); // 验证时间戳是否正确设置
-    }
-
-    @Test
-    void testSuccessWithMessage() {
-        String message = "自定义成功消息";
-        Result<String> result = Result.success(message);
-        assertTrue(result.getSuccess());
-        assertFalse(result.getFailure());
-        assertEquals(ResultCodeEnum.SUCCESS.getCode(), result.getCode());
-        assertEquals(message, result.getMessage());
-        assertNull(result.getData());
-        assertTrue(result.getTimestamp() > 0); // 验证时间戳是否正确设置
+        System.out.println(result);
     }
 
     @Test
     void testSuccessWithData() {
+        // 测试带数据的成功结果
         String data = "测试数据";
         Result<String> result = Result.success(data);
-        assertTrue(result.getSuccess());
-        assertFalse(result.getFailure());
+        assertTrue(result.isSuccess()); // 断言 success 为 true
         assertEquals(ResultCodeEnum.SUCCESS.getCode(), result.getCode());
         assertEquals(ResultCodeEnum.SUCCESS.getMessage(), result.getMessage());
-        assertEquals(data, result.getData());
+        assertEquals(data, result.getData()); // 断言 data 正确
         assertTrue(result.getTimestamp() > 0); // 验证时间戳是否正确设置
+        System.out.println(result);
     }
 
     @Test
     void testSuccessWithMessageAndData() {
+        // 测试带自定义消息和数据的成功结果
         String message = "自定义成功消息";
         String data = "测试数据";
         Result<String> result = Result.success(message, data);
-        assertTrue(result.getSuccess());
-        assertFalse(result.getFailure());
+        assertTrue(result.isSuccess()); // 断言 success 为 true
         assertEquals(ResultCodeEnum.SUCCESS.getCode(), result.getCode());
-        assertEquals(message, result.getMessage());
-        assertEquals(data, result.getData());
+        assertEquals(message, result.getMessage()); // 断言自定义消息正确
+        assertEquals(data, result.getData()); // 断言 data 正确
         assertTrue(result.getTimestamp() > 0); // 验证时间戳是否正确设置
-    }
-
-    @Test
-    void testSuccessWithCodeAndMessage() {
-        String code = "0001";
-        String message = "自定义成功消息";
-        Result<String> result = Result.success(code, message);
-        assertTrue(result.getSuccess());
-        assertFalse(result.getFailure());
-        assertEquals(code, result.getCode());
-        assertEquals(message, result.getMessage());
-        assertNull(result.getData());
-        assertTrue(result.getTimestamp() > 0); // 验证时间戳是否正确设置
+        System.out.println(result);
     }
 
     @Test
     void testFailureNoArgs() {
-        Result<String> result = Result.failure();
-        assertFalse(result.getSuccess());
-        assertTrue(result.getFailure());
+        // 测试无参的失败结果
+        Result<Void> result = Result.failure();
+        assertFalse(result.isSuccess()); // 断言 success 为 false
         assertEquals(ResultCodeEnum.FAILURE.getCode(), result.getCode());
         assertEquals(ResultCodeEnum.FAILURE.getMessage(), result.getMessage());
-        assertNull(result.getData());
+        assertNull(result.getData()); // 断言 data 为 null
         assertTrue(result.getTimestamp() > 0); // 验证时间戳是否正确设置
+        System.out.println(result);
     }
 
     @Test
     void testFailureWithMessage() {
+        // 测试带自定义消息的失败结果
         String message = "自定义失败消息";
         Result<String> result = Result.failure(message);
-        assertFalse(result.getSuccess());
-        assertTrue(result.getFailure());
+        assertFalse(result.isSuccess()); // 断言 success 为 false
         assertEquals(ResultCodeEnum.FAILURE.getCode(), result.getCode());
-        assertEquals(message, result.getMessage());
-        assertNull(result.getData());
+        assertEquals(message, result.getMessage()); // 断言自定义消息正确
+        assertNull(result.getData()); // 断言 data 为 null
         assertTrue(result.getTimestamp() > 0); // 验证时间戳是否正确设置
-    }
-
-    @Test
-    void testFailureWithData() {
-        String data = "测试数据";
-        Result<String> result = Result.failure(data);
-        assertFalse(result.getSuccess());
-        assertTrue(result.getFailure());
-        assertEquals(ResultCodeEnum.FAILURE.getCode(), result.getCode());
-        assertEquals(ResultCodeEnum.FAILURE.getMessage(), result.getMessage());
-        assertEquals(data, result.getData());
-        assertTrue(result.getTimestamp() > 0); // 验证时间戳是否正确设置
-    }
-
-    @Test
-    void testFailureWithMessageAndData() {
-        String message = "自定义失败消息";
-        String data = "测试数据";
-        Result<String> result = Result.failure(message, data);
-        assertFalse(result.getSuccess());
-        assertTrue(result.getFailure());
-        assertEquals(ResultCodeEnum.FAILURE.getCode(), result.getCode());
-        assertEquals(message, result.getMessage());
-        assertEquals(data, result.getData());
-        assertTrue(result.getTimestamp() > 0); // 验证时间戳是否正确设置
+        System.out.println(result);
     }
 
     @Test
     void testFailureWithCodeAndMessage() {
+        // 测试带自定义状态码和消息的失败结果
         String code = "9998";
         String message = "自定义失败消息";
         Result<String> result = Result.failure(code, message);
-        assertFalse(result.getSuccess());
-        assertTrue(result.getFailure());
-        assertEquals(code, result.getCode());
-        assertEquals(message, result.getMessage());
-        assertNull(result.getData());
+        assertFalse(result.isSuccess()); // 断言 success 为 false
+        assertEquals(code, result.getCode()); // 断言自定义状态码正确
+        assertEquals(message, result.getMessage()); // 断言自定义消息正确
+        assertNull(result.getData()); // 断言 data 为 null
         assertTrue(result.getTimestamp() > 0); // 验证时间戳是否正确设置
+        System.out.println(result);
     }
 
     @Test
-    void testMessageMethod() {
-        String message = "新消息";
-        Result<String> result = Result.success().message(message);
-//        Result<Object> result1 = Result.success(message);
-        assertEquals(message, result.getMessage());
-        assertTrue(result.getTimestamp() > 0); // 验证时间戳是否正确设置
-    }
+    void testIsFailure() {
+        // 测试 isFailure() 方法
+        Result<String> successResult = Result.success();
+        assertFalse(successResult.isFailure()); // 断言 successResult 不是失败
 
-    @Test
-    void testCodeMethod() {
-        String code = "0002";
-        Result<String> result = Result.success().code(code);
-        assertEquals(code, result.getCode());
-        assertTrue(result.getTimestamp() > 0); // 验证时间戳是否正确设置
-    }
-
-    @Test
-    void testDataMethod() {
-        String data = "新数据";
-        Result<String> result = Result.success().data(data);
-        assertEquals(data, result.getData());
-        assertTrue(result.getTimestamp() > 0); // 验证时间戳是否正确设置
+        Result<String> failureResult = Result.failure();
+        assertTrue(failureResult.isFailure()); // 断言 failureResult 是失败
+        System.out.println(failureResult);
     }
 }
